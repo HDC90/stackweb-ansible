@@ -1,0 +1,6 @@
+---
+- hosts: web
+  tasks:
+  roles:
+    - web
+    - tools
