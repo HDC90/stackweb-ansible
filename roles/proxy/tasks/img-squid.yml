@@ -8,3 +8,5 @@
     restart: yes
     ports:
      - 3128:3128
+    volumes:
+     - /var/spool/squid
