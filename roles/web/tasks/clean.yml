@@ -1,0 +1,19 @@
+- name: update debian
+  apt:
+    update_cache=yes
+- name: desinstall  apache2
+  apt:
+    name: apache2
+    state: absent
+- name: desingtall  nginx
+  apt:
+    name: nginx
+    state: absent
+- name: desingtall  php-fpm
+  apt:
+    name: php7.0-fpm
+    state: absent
+- name: desingtall  mysql
+  apt:
+    name: mysql-server
+    state: absent

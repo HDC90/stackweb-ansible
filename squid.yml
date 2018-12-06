@@ -2,5 +2,5 @@
 - hosts: squid
   tasks:
   roles:
-    - proxy
     - tools
+    - proxy

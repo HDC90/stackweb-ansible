@@ -1,0 +1,10 @@
+---
+- name: image squid
+  docker_container:
+    hostname: squid
+    name: squid
+    image: sameersbn/squid
+    state: started
+    restart: yes
+    ports:
+     - 3128:3128

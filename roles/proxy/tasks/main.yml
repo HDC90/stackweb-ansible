@@ -1,2 +1,6 @@
 ---
 # tasks file for proxy
+- name: install docker
+  include: docker.yml
+- name: install squid
+  include: img-squid.yml
