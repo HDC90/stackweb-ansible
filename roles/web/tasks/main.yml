@@ -1,20 +1,7 @@
 ---
 # tasks file for web
-- name: update debian
-  apt:
-    update_cache=yes
-- name: desinstall  apache2
-  apt:
-    name: apache2
-    state: absent
-- name: desingtall  nginx
-  apt:
-    name: nginx
-    state: absent
-- name: desingtall  php-fpm
-  apt:
-    name: php7.0-fpm
-    state: absent
+- name: clean machine
+  include: clean.yml
 - name: install docker
   include: docker.yml
 - name: install/run container mediawiki
