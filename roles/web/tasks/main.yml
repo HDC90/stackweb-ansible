@@ -7,30 +7,15 @@
   apt:
     name: apache2
     state: absent
-- name: install  nginx
+- name: desingtall  nginx
   apt:
     name: nginx
-    state: present
-- name: install  mysql
+    state: absent
+- name: desingtall  php-fpm
   apt:
-    name: mysql-server
-    state: present
-#- name: supprime default
-#  shell: rm /etc/nginx/sites-available/default
-#- name: supprime default
-#  shell: rm /etc/nginx/sites-enabled/default
-  #file:
-  #  path: /etc/nginx/sites-available/default
-  #  state: absent
-- name: restart nginx
-  systemd:
-    name: nginx
-    state: reloaded
-- name: installation php
-  include: php.yml
-  notify: service php
-- git:
-    repo: 'https://github.com/wikimedia/mediawiki.git'
-    dest: /var/www/html/mediawiki
-- name: conf nginx
-  include: nginxconf.yml
+    name: php7.0-fpm
+    state: absent
+- name: install docker
+  include: docker.yml
+- name: install/run container mediawiki
+  include: img-mediawiki.yml

@@ -1,15 +1,2 @@
 ---
 # defaults file for web
-stack_php:
-    - php7.0
-    - php7.0-cli
-    - php7.0-common
-    - php7.0-mysql
-    - php7.0-fpm
-    - php7.0-curl
-    - php7.0-gd
-    - php7.0-cgi
-php_timezone: "europe/Paris"
-php_upload_max_filesize: "20M"
-php_post_max_size: "20M"
-php_memory_limit: "1024M"

@@ -1,0 +1,41 @@
+---
+# tasks file for docker
+- name: enlever docker dans le doute
+  apt:
+    name:
+      - docker
+      - docker-engine
+    state: absent
+- name: update
+  apt:
+    update_cache=yes
+- name: install trucs requis
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg2
+    - software-properties-common
+- name: installer key registration
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    state: present
+  register: add_repository_key
+- name: update
+  apt:
+    update_cache: yes
+- name: curl install stable depo
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+    update_cache: yes
+- name: installer docker
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+- pip: 
+    name: docker-py

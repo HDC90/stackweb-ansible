@@ -1,0 +1,10 @@
+---
+- name: image mediawiki
+  docker_container:
+    hostname: mediawiki
+    name: mediawiki
+    image: mediawiki
+    state: started
+    restart: yes
+    ports:
+     - 8000:80
