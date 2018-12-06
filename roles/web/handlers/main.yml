@@ -1,2 +1,6 @@
 ---
 # handlers file for web
+- name: service php
+  service:
+    name: php7.0-fpm
+    stated: restarted

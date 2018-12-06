@@ -1,2 +1,9 @@
 ---
 # tasks file for tools
+- name: install tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - curl
+    - git

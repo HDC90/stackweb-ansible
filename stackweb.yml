@@ -1,5 +1,7 @@
 ---
 - hosts: web
+  vars:
+    local: mediawiki
   tasks:
   roles:
     - web

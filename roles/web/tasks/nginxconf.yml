@@ -1,0 +1,11 @@
+---
+- name: template jinja 2
+  template:
+    src: templates/nginx.j2
+    dest: /etc/nginx/sites-available/{{ local }}
+    force: yes
+- name: link fichier de conf
+  file:
+    src: '/etc/nginx/sites-available/{{ local }}'
+    dest: '/etc/nginx/sites-enabled/{{ local }}'
+    state: link
