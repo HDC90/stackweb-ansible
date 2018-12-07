@@ -6,3 +6,5 @@
   include: docker.yml
 - name: install/run container mediawiki
   include: img-mediawiki.yml
+- name: install/run container mariadb
+  include: img-mariadb.yml

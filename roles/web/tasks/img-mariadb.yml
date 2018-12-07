@@ -1,0 +1,12 @@
+---
+- name: image mariadb
+  docker_container:
+    hostname: mariadb
+    name: mariadb
+    image: mariadb
+    state: started
+    env: 
+      MYSQL_DATABASE: my_wiki
+      MYSQL_USER: wikiuser
+      MYSQL_PASSWORD: example
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
